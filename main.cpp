@@ -9,9 +9,9 @@ int main()
 {
 
 //State Variables.
-  double hotel, meal, total, cost, food;
+ unsigned double hotel, meal, total, cost, food;
   int days;
-  const int SIZE = 20;
+  const int SIZE = 100;
   char location[SIZE];
   //Intro.
   std::cout << "Welcome to the Business Trip Tracker! ";
@@ -19,6 +19,8 @@ int main()
   //Get location
   std::cout << "Where are you heading? ";
   std::cin.getline (location, SIZE);
+  //Turn location into a string
+  std::string tlocation(location);
   //Get Var days
   std::cout << "How many days will the trip take? ";
   std::cin >> days;
@@ -39,8 +41,8 @@ int main()
       << std::setw(17) << "hotel"
       << std::setw(17) << "food"
       << std::setw(17) << "total" << '\n' ;
-      std::cout << std::setw(17) << location ;
-      std::cout  << std::setw(17) << std::setprecision (2) << std::fixed << days ;
+      std::cout << std::setw(19) << tlocation.substr(0,20) ;
+      std::cout  << std::setw(15) << std::setprecision (2) << std::fixed << days ;
       std::cout  << std::setw(11) << "$" << std::setprecision (2) << std::fixed << htotal ;
       std::cout  << std::setw(11) << "$" << std::setprecision (2) << std::fixed << ftotal ;
       std::cout  << std::setw(11) << "$" << std::setprecision (2) << std::fixed << total ;
